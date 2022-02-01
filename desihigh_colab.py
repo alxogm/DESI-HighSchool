@@ -13,7 +13,7 @@ if 'COLAB_GPU' in os.environ:
 
     mydrive = drivepath + '/MyDrive/'
     
-    os.chdir(mydrive)
+    sys.path.append(mydrive + '/desihigh/')
     
     try:
         import  desihigh
@@ -25,6 +25,7 @@ if 'COLAB_GPU' in os.environ:
         # subprocess.run('pip install -r desihigh/requirements.txt', shell=True, check=True)
 
         try:
+            
             import desihigh
 
         except:
@@ -32,7 +33,6 @@ if 'COLAB_GPU' in os.environ:
 
             raise RuntimeError(emessage)
 
-    sys.path.append(mydrive + '/desihigh/')
 
 def save_colab():
     if 'COLAB_GPU' in os.environ:
